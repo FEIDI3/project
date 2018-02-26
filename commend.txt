@@ -1,0 +1,17 @@
+1- npm init
+2- npm install gulp -D
+3 -
+	npm install --save-dev gulp-connect
+	npm install --save-dev gulp-watch
+	npm install --save-dev gulp-autoprefixer
+	npm install --save-dev gulp-pug
+	npm install --save-dev gulp-ruby-sass
+4 - gulp
+========= 
+------ ------- ------  git  ------ ------- ------  
+1- git init	
+2- git remote add origin https://github.com/FEIDI3/project.git
+3- git pull origin master 
+4- touch .gitignore
+5- git add .
+6- git commit -m 'add project files'
