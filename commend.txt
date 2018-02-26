@@ -6,6 +6,8 @@
 	npm install --save-dev gulp-autoprefixer
 	npm install --save-dev gulp-pug
 	npm install --save-dev gulp-ruby-sass
+	npm install --save-dev gulp-concat
+	npm install --save-dev gulp-plumber
 4 - gulp
 ========= 
 ------ ------- ------  git  ------ ------- ------  
@@ -15,3 +17,4 @@
 4- touch .gitignore
 5- git add .
 6- git commit -m 'add project files'
+7- git push origin master 

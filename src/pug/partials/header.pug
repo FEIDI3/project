@@ -1,0 +1,21 @@
+header 
+    .container
+        .logo.img-ratio
+            .ratio.half-square
+            .ratio-inner
+                img(src="./assets/images/logo.png", alt="logo")
+        .currency-dropdown
+            ul
+                each val in ['USD','ERO','EG']
+                    li
+                        a(href="#")= val
+        .lang-dropdown
+            ul
+                each val in ['AR','ENG']
+                    li
+                        a(href="#")= val
+        .search
+            form.search-form
+                input(type="text" placeholder="Search")
+                i.fa.fa-search
+            a(href="#")

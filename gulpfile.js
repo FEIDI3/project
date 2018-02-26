@@ -4,13 +4,20 @@ const autoprefixer = require('gulp-autoprefixer');
 const pug = require('gulp-pug');
 const sass = require('gulp-ruby-sass');
 const connect = require('gulp-connect');
+const concat = require('gulp-concat');
+const plumber = require('gulp-plumber');
+
+
+
+
 
 // watch task
 
 
 gulp.task('watch', function (){
    gulp.watch('./src/**/*.scss',['sass']); 
-   gulp.watch('./src/**/*.pug',['pug']); 
+   gulp.watch('./src/**/*.pug',['pug']);
+   gulp.watch('./src/**/*.js',['js-concat']); 
 });
 
 
@@ -28,7 +35,7 @@ gulp.task('sass',function(){
         browsers: ['last 3 versions'],
         cascade: false
    }))
-    .pipe(gulp.dest('assests/css'))
+    .pipe(gulp.dest('assets/css'))
     .pipe(connect.reload());
 });
 
@@ -39,12 +46,24 @@ gulp.task('sass',function(){
 
 gulp.task('pug',function(){
        return gulp.src('./src/pug/*.pug')
-      .pipe(pug({
-            pretty: true
-      }))
-    .pipe(gulp.dest('./'))
-    .pipe(connect.reload());
+            .pipe(plumber())
+            .pipe(pug({
+                pretty: true
+            }))
+            .pipe(gulp.dest('./'))
+            .pipe(connect.reload());
 });
+
+// concat task
+
+
+gulp.task('js-concat',function(){
+    return gulp.src(['./src/js/vendor/jquery/*.js', './src/js/partials/*.js'])
+            .pipe(plumber())
+            .pipe(concat('scripts.js'))
+            .pipe(gulp.dest('./assets/js'));
+});
+
 
 
 // connect task

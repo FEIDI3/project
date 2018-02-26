@@ -1,0 +1,10 @@
+// import vendor
+@import './vendor/bootstrap/bootstrap.min.scss';
+@import './vendor/font-awesome.scss';
+
+// import our main files
+@import './partials/_fonts.scss';
+@import './partials/_img-ratio.scss';
+// import our component files
+@import './partials/_global.scss';
+@import './partials/_header.scss';
